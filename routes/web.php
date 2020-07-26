@@ -20,4 +20,6 @@ Route::get('/', function () {
 
 //queue test
 Route::get('customer', 'CustomerController@index')->name('customer.index');
+Route::get('customer/list', 'CustomerController@list')->name('customer.list');
+Route::post('customer/search', 'CustomerController@search')->name('customer.search');
 Route::post('customer-save', 'CustomerController@save')->name('customer.save');
