@@ -13,7 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        'App\Console\Commands\AutoMail',
+        'App\Console\Commands\MailCron'
     ];
 
     /**
@@ -24,7 +25,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        // $schedule->command('auto:email')->hourly();
+        // $schedule->command('auto:email')->everyMinute();
+        $schedule->command('mail:cron')->everyMinute();
     }
 
     /**

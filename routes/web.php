@@ -19,7 +19,13 @@ Route::get('/', function () {
 
 
 //queue test
-Route::get('customer', 'CustomerController@index')->name('customer.index');
-Route::get('customer/list', 'CustomerController@list')->name('customer.list');
-Route::post('customer/search', 'CustomerController@search')->name('customer.search');
-Route::post('customer-save', 'CustomerController@save')->name('customer.save');
+Route::get('customer', 'Customer2Controller@index')->name('customer.index');
+Route::get('customer/list', 'Customer2Controller@list')->name('customer.list');
+Route::post('customer/search', 'Customer2Controller@search')->name('customer.search');
+Route::post('customer-save', 'Customer2Controller@save')->name('customer.save');
+
+
+Route::get('test', function(){
+    $customer = \App\Customer::all();
+    dd($customer);
+});
